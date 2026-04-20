@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>💍</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffd1dc, #fff0f5);
+      color: #d63384;
+      padding-top: 80px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 28px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    #sim {
+      background-color: #ff69b4;
+      color: white;
+      box-shadow: 0 0 10px #ff69b4;
+    }
+
+    #sim:hover {
+      transform: scale(1.1);
+      background-color: #ff1493;
+    }
+
+    #nao {
+      background-color: #ffc0cb;
+      color: #fff;
+      position: absolute;
+    }
+
+    
+    .heart {
+      position: fixed;
+      color: pink;
+      font-size: 20px;
+      animation: subir 4s linear infinite;
+    }
+
+    @keyframes subir {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    
+    .flor {
+      position: fixed;
+      font-size: 24px;
+      animation: cair 5s linear infinite;
+    }
+
+    @keyframes cair {
+      0% { transform: translateY(-10vh) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>
+    oi mo, saiba que te amo mais que tudo nessa vida e sempre estarei aqui ao seu lado,<br><br>
+    nos piores e melhores momentos da sua vida, vou segurar sua mão como ninguém nunca segurou,<br><br>
+    te prometo que sempre vou lutar por nós até onde for possível,<br><br>
+    você é a razão da minha vida! 💖<br><br>
+    eu te amo mais que tudo... casa cmg mooo? 💍
+  </h1>
+
+  <button id="sim" onclick="respostaSim()">sim mo ❤️</button>
+  <button id="nao" onmouseover="fugir()">nao sua chata 😢</button>
+
+  <script>
+    function respostaSim() {
+      alert("eu sabiaaaa 😭💖 te amo muitooo!!!");
+
+      // criar flores na tela
+      for (let i = 0; i < 50; i++) {
+        let flor = document.createElement("div");
+        flor.classList.add("flor");
+        flor.innerHTML = "🌸";
+
+        flor.style.left = Math.random() * 100 + "vw";
+        flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+        document.body.appendChild(flor);
+
+        setTimeout(() => {
+          flor.remove();
+        }, 5000);
+      }
+    }
+
+    function fugir() {
+      const botao = document.getElementById("nao");
+      const largura = window.innerWidth - 100;
+      const altura = window.innerHeight - 50;
+
+      botao.style.left = Math.random() * largura + "px";
+      botao.style.top = Math.random() * altura + "px";
+    }
+
+    // corações subindo automaticamente
+    setInterval(() => {
+      let heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💗";
+
+      heart.style.left = Math.random() * 100 + "vw";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }, 500);
+
+  </script>
+
+</body>
+</html>
