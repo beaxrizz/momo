@@ -1,113 +1,188 @@
-<style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #0b0b10, #1a001f);
-    color: #ffffff;
-    margin: 0;
-    padding: 20px;
-    overflow-x: hidden;
-  }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💍</title>
 
-  /* 💌 CARTA */
-  h1 {
-    font-size: 20px;
-    max-width: 90%;
-    margin: auto;
-    line-height: 1.5;
-    background: rgba(20, 20, 25, 0.88);
-    padding: 25px;
-    border-radius: 25px;
-    box-shadow: 0 0 20px rgba(106, 13, 173, 0.6);
-    border: 2px solid #6a0dad;
-  }
-
-  /* 🐱 GATOS */
-  .gatinhos img {
-    width: 120px;
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
-  }
-
-  /* 💖 ANEL */
-  .anel {
-    font-size: 40px;
-    animation: brilho 1.5s infinite alternate;
-    margin: 15px;
-    color: #8a2be2;
-  }
-
-  @keyframes brilho {
-    from {
-      text-shadow: 0 0 5px #6a0dad;
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #0b0b10, #000000);
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+      overflow-x: hidden;
     }
-    to {
-      text-shadow: 0 0 20px #8a2be2;
+
+    /* 💌 CARTA */
+    h1 {
+      font-size: 20px;
+      max-width: 90%;
+      margin: auto;
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      color: #ffffff;
     }
-  }
 
-  /* BOTÕES */
-  .botoes {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-  }
-
-  button {
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  #sim {
-    background-color: #6a0dad;
-    color: white;
-  }
-
-  #sim:hover {
-    background-color: #8a2be2;
-    transform: scale(1.1);
-  }
-
-  #nao {
-    background-color: #111111;
-    color: white;
-    position: relative;
-  }
-
-  /* 💗 CORAÇÕES */
-  .heart {
-    position: fixed;
-    bottom: 0;
-    font-size: 20px;
-    animation: subir 4s linear forwards;
-  }
-
-  @keyframes subir {
-    to {
-      transform: translateY(-100vh);
-      opacity: 0;
+    /* 🐱 GATOS */
+    .gatinhos img {
+      width: 120px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
     }
-  }
 
-  /* 🌸 FLORES */
-  .flor {
-    position: fixed;
-    top: -10px;
-    font-size: 24px;
-    animation: cair 5s linear forwards;
-  }
-
-  @keyframes cair {
-    to {
-      transform: translateY(110vh) rotate(360deg);
+    /* 💖 ANEL */
+    .anel {
+      font-size: 40px;
+      margin: 15px;
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.4);
     }
+
+    /* BOTÕES */
+    .botoes {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #sim {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    #sim:hover {
+      transform: scale(1.1);
+      background-color: #eaeaea;
+    }
+
+    #nao {
+      background-color: #111111;
+      color: #ffffff;
+      position: relative;
+    }
+
+    /* 💗 CORAÇÕES */
+    .heart {
+      position: fixed;
+      bottom: 0;
+      font-size: 20px;
+      animation: subir 4s linear forwards;
+    }
+
+    @keyframes subir {
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    /* 🌸 FLORES */
+    .flor {
+      position: fixed;
+      top: -10px;
+      font-size: 24px;
+      animation: cair 5s linear forwards;
+    }
+
+    @keyframes cair {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🎵 MÚSICA -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3d3c7c3b2f.mp3?filename=romantic-music-110397.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🐱 GATOS -->
+<div class="gatinhos">
+  <img src="https://i.pinimg.com/originals/04/b6/13/04b613c4523e12dcb35d7f703a752faf.gif">
+  <img src="https://th.bing.com/th/id/R.fa494e85b6099eda29f75fa0ae547e7a?rik=ZUO7DXLDjBraiw&pid=ImgRaw&r=0">
+</div>
+
+<!-- 💍 ANEL -->
+<div class="anel">💍</div>
+
+<!-- 💌 TEXTO -->
+<h1>
+oi mo, saiba que te amo mais que tudo nessa vida, sempre vou lutar por você e por nós, independente de qualquer briguinha besta que nós tivermos (e temos muitas) meu amor por você só cresce. Que sorte a minha de ter um amor tão puro quanto o seu. Obrigada por tudo que faz e já fez por mim, eu sempre vou estar ao seu lado sendo seu apoio independente de qualquer coisa, sempre conte comigo. Eu te amo mais que ontem e menos que amanhã. <br><br>
+promete q vai casar cmg mo? 
+</h1>
+
+<!-- BOTÕES -->
+<div class="botoes">
+  <button id="sim" onclick="respostaSim()">sim mo</button>
+  <button id="nao" onmouseover="fugir()">nao sua chata</button>
+</div>
+
+<script>
+function respostaSim() {
+  alert("acho bom mesmo viu bb, até pq se n for comigo n vai ser com mais ngm nao fia, te amo");
+
+  // flores
+  for (let i = 0; i < 50; i++) {
+    let flor = document.createElement("div");
+    flor.className = "flor";
+    flor.innerHTML = "🌸";
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(flor);
+    setTimeout(() => flor.remove(), 5000);
   }
-</style>
+
+  // redireciona playlist
+  setTimeout(() => {
+    window.location.href = "https://open.spotify.com/playlist/066Snz8bj7DNTYPsPbRi1V?si=mAS5mzX4Rm6KHhPTMTehPw&pi=Kcpa5gcWT5iip";
+  }, 3000);
+}
+
+function fugir() {
+  const botao = document.getElementById("nao");
+
+  const largura = window.innerWidth - 120;
+  const altura = window.innerHeight - 120;
+
+  botao.style.left = Math.random() * largura + "px";
+  botao.style.top = Math.random() * altura + "px";
+
+  alert("se nao for no amor, vai ser no tambor 😈");
+}
+
+// corações
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 4000);
+}, 500);
+</script>
+
+</body>
+</html>
