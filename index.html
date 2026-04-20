@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💍</title>
 
   <style>
@@ -10,36 +11,39 @@
       text-align: center;
       background: linear-gradient(135deg, #ffd1dc, #fff0f5);
       color: #d63384;
-      padding-top: 80px;
-      overflow: hidden;
+      margin: 0;
+      padding: 20px;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 28px;
-      max-width: 700px;
+      font-size: 20px;
+      max-width: 90%;
       margin: auto;
-      line-height: 1.6;
-      background: rgba(255, 255, 255, 0.7);
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.8);
       padding: 20px;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+    }
+
+    .botoes {
+      margin-top: 30px;
     }
 
     button {
-      padding: 15px 30px;
-      font-size: 18px;
-      margin: 20px;
+      padding: 12px 25px;
+      font-size: 16px;
+      margin: 10px;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       transition: 0.3s;
-      position: relative;
     }
 
     #sim {
       background-color: #ff69b4;
       color: white;
-      box-shadow: 0 0 10px #ff69b4;
     }
 
     #sim:hover {
@@ -49,59 +53,69 @@
 
     #nao {
       background-color: #ffc0cb;
-      color: #fff;
+      color: white;
       position: absolute;
     }
 
-    
+    /* corações */
     .heart {
       position: fixed;
-      color: pink;
+      bottom: 0;
       font-size: 20px;
-      animation: subir 4s linear infinite;
+      animation: subir 4s linear forwards;
     }
 
     @keyframes subir {
-      0% { transform: translateY(100vh); opacity: 1; }
-      100% { transform: translateY(-10vh); opacity: 0; }
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
     }
 
-    
+    /* flores */
     .flor {
       position: fixed;
+      top: -10px;
       font-size: 24px;
-      animation: cair 5s linear infinite;
+      animation: cair 5s linear forwards;
     }
 
     @keyframes cair {
-      0% { transform: translateY(-10vh) rotate(0deg); }
-      100% { transform: translateY(110vh) rotate(360deg); }
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
     }
-
   </style>
 </head>
 
 <body>
 
   <h1>
-    oi mo, saiba que te amo mais que tudo nessa vida e sempre estarei aqui ao seu lado,<br><br>
-    nos piores e melhores momentos da sua vida, vou segurar sua mão como ninguém nunca segurou,<br><br>
-    te prometo que sempre vou lutar por nós até onde for possível,<br><br>
-    você é a razão da minha vida! 💖<br><br>
-    eu te amo mais que tudo... casa cmg mooo? 💍
+    oi mo, saiba que te amo mais que tudo nessa vida 💖<br><br>
+    sempre estarei ao seu lado, nos piores e melhores momentos,<br><br>
+    vou segurar sua mão como ninguém nunca segurou,<br><br>
+    te prometo que sempre vou lutar por nós 🥺<br><br>
+    você é a razão da minha vida!<br><br>
+    casa cmg mooo? 💍
   </h1>
 
-  <button id="sim" onclick="respostaSim()">sim mo ❤️</button>
-  <button id="nao" onmouseover="fugir()">nao sua chata 😢</button>
+  <div class="botoes">
+    <button id="sim" onclick="respostaSim()">sim mo ❤️</button>
+    <button id="nao" onmouseover="fugir()">nao sua chata 😢</button>
+  </div>
 
   <script>
     function respostaSim() {
-      alert("eu sabiaaaa 😭💖 te amo muitooo!!!");
+      alert("eu sabiaaa 😭💖 te amo muito!!!");
 
-      // criar flores na tela
-      for (let i = 0; i < 50; i++) {
+      // flores
+      for (let i = 0; i < 40; i++) {
         let flor = document.createElement("div");
-        flor.classList.add("flor");
+        flor.className = "flor";
         flor.innerHTML = "🌸";
 
         flor.style.left = Math.random() * 100 + "vw";
@@ -109,36 +123,32 @@
 
         document.body.appendChild(flor);
 
-        setTimeout(() => {
-          flor.remove();
-        }, 5000);
+        setTimeout(() => flor.remove(), 5000);
       }
     }
 
     function fugir() {
       const botao = document.getElementById("nao");
+
       const largura = window.innerWidth - 100;
-      const altura = window.innerHeight - 50;
+      const altura = window.innerHeight - 100;
 
       botao.style.left = Math.random() * largura + "px";
       botao.style.top = Math.random() * altura + "px";
     }
 
-    // corações subindo automaticamente
+    // corações subindo
     setInterval(() => {
       let heart = document.createElement("div");
-      heart.classList.add("heart");
+      heart.className = "heart";
       heart.innerHTML = "💗";
 
       heart.style.left = Math.random() * 100 + "vw";
 
       document.body.appendChild(heart);
 
-      setTimeout(() => {
-        heart.remove();
-      }, 4000);
-    }, 500);
-
+      setTimeout(() => heart.remove(), 4000);
+    }, 600);
   </script>
 
 </body>
