@@ -9,8 +9,8 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      background: linear-gradient(135deg, #0b0b10, #000000);
-      color: #ffffff;
+      background: linear-gradient(135deg, #ffd1dc, #fff0f5);
+      color: #d63384;
       margin: 0;
       padding: 20px;
       overflow-x: hidden;
@@ -22,12 +22,11 @@
       max-width: 90%;
       margin: auto;
       line-height: 1.5;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.85);
       padding: 25px;
       border-radius: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-      color: #ffffff;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+      border: 3px dashed #ff69b4;
     }
 
     /* 🐱 GATOS */
@@ -35,16 +34,17 @@
       width: 120px;
       margin: 10px;
       border-radius: 15px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px pink;
     }
 
-    /* 💖 ANEL */
+    /* 💖 ANEL BRILHANDO */
     .anel {
       font-size: 40px;
+      animation: brilho 1.5s infinite alternate;
       margin: 15px;
-      color: #ffffff;
-      text-shadow: 0 0 8px rgba(255,255,255,0.4);
     }
+
+  
 
     /* BOTÕES */
     .botoes {
@@ -66,18 +66,17 @@
     }
 
     #sim {
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #ff69b4;
+      color: white;
     }
 
     #sim:hover {
       transform: scale(1.1);
-      background-color: #eaeaea;
     }
 
     #nao {
-      background-color: #111111;
-      color: #ffffff;
+      background-color: #ff69b4;
+      color: white;
       position: relative;
     }
 
@@ -144,6 +143,7 @@ promete q vai casar cmg mo?
 function respostaSim() {
   alert("acho bom mesmo viu bb, até pq se n for comigo n vai ser com mais ngm nao fia, te amo");
 
+
   // flores
   for (let i = 0; i < 50; i++) {
     let flor = document.createElement("div");
@@ -155,22 +155,18 @@ function respostaSim() {
     setTimeout(() => flor.remove(), 5000);
   }
 
-  // redireciona playlist
+  // 💖 redireciona depois de 3 segundos
   setTimeout(() => {
     window.location.href = "https://open.spotify.com/playlist/066Snz8bj7DNTYPsPbRi1V?si=mAS5mzX4Rm6KHhPTMTehPw&pi=Kcpa5gcWT5iip";
   }, 3000);
 }
 
 function fugir() {
-  const botao = document.getElementById("nao");
+  alert("se nao for no amor, vai ser no tambor, pode deixar que amanha mesmo arrumo uma galinha preta e coloco na sua bolsa");
 
-  const largura = window.innerWidth - 120;
-  const altura = window.innerHeight - 120;
 
   botao.style.left = Math.random() * largura + "px";
   botao.style.top = Math.random() * altura + "px";
-
-  alert("se nao for no amor, vai ser no tambor 😈");
 }
 
 // corações
@@ -184,5 +180,7 @@ setInterval(() => {
 }, 500);
 </script>
 
+</body>
+</html>
 </body>
 </html>
