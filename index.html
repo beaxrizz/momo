@@ -16,7 +16,7 @@
       overflow-x: hidden;
     }
 
-    /* 💌 CARTA MELHORADA (ADICIONADO) */
+    /* 💌 CARTA */
     h1 {
       font-size: 20px;
       max-width: 90%;
@@ -26,14 +26,10 @@
       padding: 25px;
       border-radius: 25px;
       box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
-      border: 3px dashed #ff69b4; /* borda fofa */
+      border: 3px dashed #ff69b4;
     }
 
-    /* 🐱 GIFS DE GATINHOS (ADICIONADO) */
-    .gatinhos {
-      margin: 15px auto;
-    }
-
+    /* 🐱 GATOS */
     .gatinhos img {
       width: 120px;
       margin: 10px;
@@ -41,14 +37,30 @@
       box-shadow: 0 0 10px pink;
     }
 
+    /* 💖 ANEL BRILHANDO */
+    .anel {
+      font-size: 40px;
+      animation: brilho 1.5s infinite alternate;
+      margin: 15px;
+    }
+
+    @keyframes brilho {
+      from { transform: scale(1); text-shadow: 0 0 5px pink; }
+      to { transform: scale(1.2); text-shadow: 0 0 20px hotpink; }
+    }
+
+    /* BOTÕES */
     .botoes {
       margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
     }
 
     button {
       padding: 12px 25px;
       font-size: 16px;
-      margin: 10px;
       border: none;
       border-radius: 30px;
       cursor: pointer;
@@ -62,7 +74,6 @@
 
     #sim:hover {
       transform: scale(1.1);
-      background-color: #ff1493;
     }
 
     #nao {
@@ -71,7 +82,7 @@
       position: absolute;
     }
 
-    /* corações */
+    /* 💗 CORAÇÕES */
     .heart {
       position: fixed;
       bottom: 0;
@@ -80,17 +91,13 @@
     }
 
     @keyframes subir {
-      from {
-        transform: translateY(0);
-        opacity: 1;
-      }
       to {
         transform: translateY(-100vh);
         opacity: 0;
       }
     }
 
-    /* flores */
+    /* 🌸 FLORES */
     .flor {
       position: fixed;
       top: -10px;
@@ -108,65 +115,76 @@
 
 <body>
 
-  <!-- 🐱 GATINHOS (ADICIONADO SEM MEXER NO SEU CONTEÚDO) -->
-  <div class="gatinhos">
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif">
-    <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif">
-  </div>
+<!-- 🎵 MÚSICA -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3d3c7c3b2f.mp3?filename=romantic-music-110397.mp3" type="audio/mpeg">
+</audio>
 
-  <h1>
-    oi mo, saiba que te amo mais que tudo nessa vida ❤️
-    sempre estarei ao seu lado, nos piores e melhores momentos, vou segurar sua mão como ninguém nunca segurou. Mesmo diante todas as nossas briguinhas idiotas, eu te amo mais que ontem e menos que amanhã. Te prometo que sempre vou lutar por nós, você é a razão da minha vida!<br><br>
-    casa cmg mooo? 
-  </h1>
+<!-- 🐱 GATOS -->
+<div class="gatinhos">
+  <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+  <img src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif">
+</div>
 
-  <div class="botoes">
-    <button id="sim" onclick="respostaSim()">sim mozin ❤️</button>
-    <button id="nao" onmouseover="fugir()">nao sua chata </button>
-  </div>
+<!-- 💍 ANEL -->
+<div class="anel">💍✨</div>
 
-  <script>
-    function respostaSim() {
-      alert("acho bom mesmo bb, até pq se nao for cmg nao vai ser c mais ngm, teamomozin");
+<!-- 💌 TEXTO -->
+<h1>
+oi mo, saiba que te amo mais que tudo nessa vida ❤️<br><br>
+sempre estarei ao seu lado, nos piores e melhores momentos,<br>
+vou segurar sua mão como ninguém nunca segurou.<br><br>
+te prometo que sempre vou lutar por nós,<br>
+você é a razão da minha vida!<br><br>
+casa cmg mooo? 💍
+</h1>
 
-      for (let i = 0; i < 40; i++) {
-        let flor = document.createElement("div");
-        flor.className = "flor";
-        flor.innerHTML = "🌸";
+<!-- BOTÕES -->
+<div class="botoes">
+  <button id="sim" onclick="respostaSim()">sim mozin ❤️</button>
+  <button id="nao" onmouseover="fugir()">nao sua chata</button>
+</div>
 
-        flor.style.left = Math.random() * 100 + "vw";
-        flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+<script>
+function respostaSim() {
+  alert("EU SABIAAAA 😭💖");
 
-        document.body.appendChild(flor);
+  // cresce botão sim
+  const sim = document.getElementById("sim");
+  sim.style.transform = "scale(1.5)";
 
-        setTimeout(() => flor.remove(), 5000);
-      }
-    }
+  // flores
+  for (let i = 0; i < 50; i++) {
+    let flor = document.createElement("div");
+    flor.className = "flor";
+    flor.innerHTML = "🌸";
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(flor);
+    setTimeout(() => flor.remove(), 5000);
+  }
+}
 
-    function fugir() {
-      alert("vc n ta nem doida né fia, se n for no amor vai ser no tambor, pd esperar q vou arrumar uma galinha preta pra matar hj mesmo e botar na sua porta ");
-      
-      const botao = document.getElementById("nao");
+function fugir() {
+  const botao = document.getElementById("nao");
 
-      const largura = window.innerWidth - 100;
-      const altura = window.innerHeight - 100;
+  const largura = window.innerWidth - 120;
+  const altura = window.innerHeight - 120;
 
-      botao.style.left = Math.random() * largura + "px";
-      botao.style.top = Math.random() * altura + "px";
-    }
+  botao.style.left = Math.random() * largura + "px";
+  botao.style.top = Math.random() * altura + "px";
+}
 
-    setInterval(() => {
-      let heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "💗";
-
-      heart.style.left = Math.random() * 100 + "vw";
-
-      document.body.appendChild(heart);
-
-      setTimeout(() => heart.remove(), 4000);
-    }, 600);
-  </script>
+// corações
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 4000);
+}, 500);
+</script>
 
 </body>
 </html>
