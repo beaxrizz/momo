@@ -16,15 +16,29 @@
       overflow-x: hidden;
     }
 
+    /* 💌 CARTA MELHORADA (ADICIONADO) */
     h1 {
       font-size: 20px;
       max-width: 90%;
       margin: auto;
       line-height: 1.5;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+      border: 3px dashed #ff69b4; /* borda fofa */
+    }
+
+    /* 🐱 GIFS DE GATINHOS (ADICIONADO) */
+    .gatinhos {
+      margin: 15px auto;
+    }
+
+    .gatinhos img {
+      width: 120px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px pink;
     }
 
     .botoes {
@@ -94,6 +108,12 @@
 
 <body>
 
+  <!-- 🐱 GATINHOS (ADICIONADO SEM MEXER NO SEU CONTEÚDO) -->
+  <div class="gatinhos">
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif">
+    <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif">
+  </div>
+
   <h1>
     oi mo, saiba que te amo mais que tudo nessa vida ❤️
     sempre estarei ao seu lado, nos piores e melhores momentos, vou segurar sua mão como ninguém nunca segurou. Mesmo diante todas as nossas briguinhas idiotas, eu te amo mais que ontem e menos que amanhã. Te prometo que sempre vou lutar por nós, você é a razão da minha vida!<br><br>
@@ -109,7 +129,6 @@
     function respostaSim() {
       alert("acho bom mesmo bb, até pq se nao for cmg nao vai ser c mais ngm, teamomozin");
 
-      // flores
       for (let i = 0; i < 40; i++) {
         let flor = document.createElement("div");
         flor.className = "flor";
@@ -127,6 +146,7 @@
     function fugir() {
       alert("vc n ta nem doida né fia, se n for no amor vai ser no tambor, pd esperar q vou arrumar uma galinha preta pra matar hj mesmo e botar na sua porta ");
       
+      const botao = document.getElementById("nao");
 
       const largura = window.innerWidth - 100;
       const altura = window.innerHeight - 100;
@@ -135,7 +155,6 @@
       botao.style.top = Math.random() * altura + "px";
     }
 
-    // corações subindo
     setInterval(() => {
       let heart = document.createElement("div");
       heart.className = "heart";
