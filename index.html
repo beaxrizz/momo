@@ -44,10 +44,7 @@
       margin: 15px;
     }
 
-    @keyframes brilho {
-      from { transform: scale(1); text-shadow: 0 0 5px pink; }
-      to { transform: scale(1.2); text-shadow: 0 0 20px hotpink; }
-    }
+  
 
     /* BOTÕES */
     .botoes {
@@ -122,36 +119,29 @@
 
 <!-- 🐱 GATOS -->
 <div class="gatinhos">
-  <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-  <img src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif">
+  <img src="https://i.pinimg.com/originals/04/b6/13/04b613c4523e12dcb35d7f703a752faf.gif">
+  <img src="https://th.bing.com/th/id/R.fa494e85b6099eda29f75fa0ae547e7a?rik=ZUO7DXLDjBraiw&pid=ImgRaw&r=0">
 </div>
 
 <!-- 💍 ANEL -->
-<div class="anel">💍✨</div>
+<div class="anel">💍</div>
 
 <!-- 💌 TEXTO -->
 <h1>
-oi mo, saiba que te amo mais que tudo nessa vida ❤️<br><br>
-sempre estarei ao seu lado, nos piores e melhores momentos,<br>
-vou segurar sua mão como ninguém nunca segurou.<br><br>
-te prometo que sempre vou lutar por nós,<br>
-você é a razão da minha vida!<br><br>
-casa cmg mooo? 💍
+oi mo, saiba que te amo mais que tudo nessa vida, sempre vou lutar por você e por nós, independente de qualquer briguinha besta que nós tivermos (e temos muitas) meu amor por você só cresce. Que sorte a minha de ter um amor tão puro quanto o seu. Obrigada por tudo que faz e já fez por mim, eu sempre vou estar ao seu lado sendo seu apoio independente de qualquer coisa, sempre conte comigo. Eu te amo mais que ontem e menos que amanhã. <br><br>
+promete q vai casar cmg mo? 
 </h1>
 
 <!-- BOTÕES -->
 <div class="botoes">
-  <button id="sim" onclick="respostaSim()">sim mozin ❤️</button>
+  <button id="sim" onclick="respostaSim()">sim mo</button>
   <button id="nao" onmouseover="fugir()">nao sua chata</button>
 </div>
 
 <script>
 function respostaSim() {
-  alert("EU SABIAAAA 😭💖");
+  alert("acho bom mesmo viu bb, até pq se n for comigo n vai ser com mais ngm nao fia, te amo");
 
-  // cresce botão sim
-  const sim = document.getElementById("sim");
-  sim.style.transform = "scale(1.5)";
 
   // flores
   for (let i = 0; i < 50; i++) {
@@ -166,10 +156,8 @@ function respostaSim() {
 }
 
 function fugir() {
-  const botao = document.getElementById("nao");
+  alert("se nao for no amor, vai ser no tambor, pode deixar que amanha mesmo arrumo uma galinha preta e coloco na sua bolsa");
 
-  const largura = window.innerWidth - 120;
-  const altura = window.innerHeight - 120;
 
   botao.style.left = Math.random() * largura + "px";
   botao.style.top = Math.random() * altura + "px";
